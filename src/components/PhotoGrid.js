@@ -3,28 +3,42 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { fetchPhotos } from "../actions/index";
-import SinglePhoto from "./SinglePhoto";
+import Photo from "./Photo";
 
 class PhotoGrid extends Component {
   componentDidMount() {
     this.props.fetchPhotos();
+    console.log(this.props.photos[0]);    
   }
 
   renderPhotos() {
-    console.log(this.props);
+    const [photos] = this.props.photos;
+    console.log(photos);
+    this.props.photos.map(photo => {
+      return (
+        <div>blah</div>
+      )
+    })
   }
 
   render() {
     return (
       <div>I'm the PhotoGrid
-        <SinglePhoto />
+        {this.renderPhotos()}
       </div>
     );
   }
+}
+
+// const mapStateToProps = ({ photos }) => ({ photos});
+
+function mapStateToProps({photos}) {
+  console.log(photos);
+  return {photos};
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators( { fetchPhotos }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(PhotoGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoGrid);
