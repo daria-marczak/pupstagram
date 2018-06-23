@@ -1,8 +1,10 @@
 import React from "react";
+import "../styles/Photo.css";
 
-const Photo = () => {
+const Photo = ({ photo }) => {
+  console.log(photo);
   return (
-      <img src="https://pbs.twimg.com/profile_images/888907252702347265/g2JwwLDR_400x400.jpg" alt="dog" />
+      <img src={photo} className="photo" alt="dog" />
   );
 }
 
