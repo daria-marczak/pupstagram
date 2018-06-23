@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Lato');
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Dancing Script", serif;
+  font-size: 4rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
