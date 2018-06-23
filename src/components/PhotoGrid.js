@@ -1,13 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
+import { FetchPhotos } from "../actions/index";
 import SinglePhoto from "./SinglePhoto";
 
-const PhotoGrid = () => {
-  return (
-    <div>I'm the PhotoGrid
-      <SinglePhoto />
-    </div>
-  );
+class PhotoGrid extends Component {
+  renderPhotos() {
+
+  }
+
+  render() {
+    return (
+      <div>I'm the PhotoGrid
+        <SinglePhoto />
+      </div>
+    );
+  }
 }
 
-export default PhotoGrid;
+function mapStateToProps({ photos }) {
+  return { photos };
+}
+
+export default connect(mapStateToProps)(PhotoGrid);
