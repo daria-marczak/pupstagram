@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 
 import "../styles/PhotoGrid.css";
 import { fetchPhotos } from "../actions/index";
 import Photo from "./Photo";
+import SinglePhoto from "./SinglePhoto";
 
 class PhotoGrid extends Component {
   componentDidMount() {
@@ -16,7 +18,11 @@ class PhotoGrid extends Component {
     if (!photosArray) {
       return <p>Loading...</p>;
     }
-    return photosArray.map((photo, index) => <Photo key={index} photo={photo}/>)
+    return photosArray.map((photo, index) => (
+      <Link to={`/photo/${index}`}>
+        <Photo key={index} photo={photo}/>
+      </Link>
+    ));
   }
 
   render() {

@@ -1,6 +1,8 @@
 .photogrid {
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 }
