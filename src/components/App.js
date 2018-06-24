@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import '../styles/App.css';
 import PhotoGrid from "./PhotoGrid";
@@ -11,7 +11,9 @@ class App extends Component {
       <div className="App">
         <h1>Pupstagram</h1>
         <PhotoGrid />
-        <Route path={`/photo/:index`} component={SinglePhoto} />
+        <Switch>
+          <Route path={`/:index`} component={SinglePhoto} />
+        </Switch>
       </div>
     );
   }

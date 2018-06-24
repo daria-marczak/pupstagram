@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
-
+import { withRouter } from "react-router";
 import "../styles/PhotoGrid.css";
 import { fetchPhotos } from "../actions/index";
 import Photo from "./Photo";
@@ -19,7 +19,7 @@ class PhotoGrid extends Component {
       return <p>Loading...</p>;
     }
     return photosArray.map((photo, index) => (
-      <Link to={`/photo/${index}`}>
+      <Link key={index} to={`/${photo}`} photo={photo}>
         <Photo key={index} photo={photo}/>
       </Link>
     ));
@@ -42,4 +42,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators( { fetchPhotos }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoGrid);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoGrid));

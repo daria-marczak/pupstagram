@@ -1,9 +1,11 @@
 import React from "react";
 
-const SinglePhoto = () => {
+const SinglePhoto = (photo) => {
+  const { location: { pathname: path } } = photo;
+  const pathName = path.substring(1);
   return (
     <figure>
-      <img src="https://pbs.twimg.com/profile_images/888907252702347265/g2JwwLDR_400x400.jpg" alt="dog" />
+      <img src={pathName} alt="dog" />
       <figcaption>A grateful little doggo</figcaption>
     </figure>
   );
