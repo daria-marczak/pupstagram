@@ -6,7 +6,6 @@ import { withRouter } from "react-router";
 import "../styles/PhotoGrid.css";
 import { fetchPhotos } from "../actions/index";
 import Photo from "./Photo";
-import SinglePhoto from "./SinglePhoto";
 
 class PhotoGrid extends Component {
   componentDidMount() {

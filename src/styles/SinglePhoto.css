@@ -1,0 +1,27 @@
+figure {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  background-color: white;
+  padding: 1em;
+  box-shadow: 0 0 25px #ccc;
+}
+
+.SinglePhoto img {
+  object-fit: cover;
+  width:500px;
+  height:500px;
+}
+
+figcaption {
+  flex: 1;
+  margin-left: 2em;
+}
