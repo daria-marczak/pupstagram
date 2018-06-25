@@ -1,32 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, compose, applyMiddleware } from 'redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, compose, applyMiddleware } from "redux";
 import { createBrowserHistory } from "history";
 import ReduxPromise from "redux-promise";
 import { connectRouter, routerMiddleware, ConnectedRouter } from "connected-react-router";
-import App from './components/App';
+import { Route, Switch } from "react-router-dom";
+
+import App from "./components/App";
 import reducers from "./reducers";
+import SinglePhoto from "./components/SinglePhoto";
 
 const history = createBrowserHistory();
 
 const store = createStore(
   connectRouter(history)(reducers),
-  compose(
-    applyMiddleware(
-      routerMiddleware(history),
-      ReduxPromise
-    )
-  )
-)
-
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
+  compose(applyMiddleware(routerMiddleware(history), ReduxPromise))
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
-    </ ConnectedRouter>
-  </Provider>
-  , document.getElementById('root'));
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path={`/:index`} component={SinglePhoto} />
+      </Switch>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById("root")
+);
