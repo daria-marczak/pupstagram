@@ -19,7 +19,6 @@ a {
 }
 
 figure {
-  border: 1px solid red;
   flex: 1;
   margin-left: 2em;
 }
