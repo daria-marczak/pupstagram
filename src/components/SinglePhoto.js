@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/SinglePhoto.css";
+import CommentList from "./CommentList";
+import CommentForm from "./CommentForm";
 
 const SinglePhoto = (photo) => {
   const { location: { pathname: path } } = photo;
@@ -8,10 +10,14 @@ const SinglePhoto = (photo) => {
   return (
     <div className="SinglePhoto">
       <Link to="/"><h1>Pupstagram</h1></Link>
-      <figure>
+      <div className="post">
         <img src={pathName} alt="dog" />
-        <figcaption>A grateful little doggo</figcaption>
-      </figure>
+        <figure>
+          <figcaption>One of Shakespeare’s most mischievous characters is Crab, the dog belonging to Launce in the Two Gentlemen of Verona. The word \"watchdog\" is first found in The Tempest.</figcaption>
+          <CommentList />
+          <CommentForm />
+        </figure>
+      </div>
     </div>
   );
 }
