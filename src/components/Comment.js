@@ -1,9 +1,16 @@
 import React from "react";
+import { Field, reduxForm } from "redux-form";
+import "../styles/Comment.css";
 
-const Comment = () => {
+let Comment = () => {
   return (
-    <li>I'm a comment</li>
+    <form>
+      <Field name="username" className="username field"  placeholder="Username" component="input"/>
+      <Field name="comment" className="comment field" placeholder="Comment" component="input"/>
+    </form>
   );
 }
 
-export default Comment;
+export default Comment = reduxForm ({
+  form: "CommentForm"
+})(Comment);

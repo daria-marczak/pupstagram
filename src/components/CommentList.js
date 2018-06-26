@@ -3,11 +3,11 @@ import Comment from "./Comment";
 
 const CommentList = () => {
   return (
-    <ul>
+    <div>
       <Comment />
       <Comment />
       <Comment />
-    </ul>
+    </div>
   );
 }
 
