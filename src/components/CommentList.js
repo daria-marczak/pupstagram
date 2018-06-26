@@ -1,13 +1,14 @@
 import React from "react";
 import Comment from "./Comment";
+import "../styles/CommentList.css";
 
 const CommentList = () => {
   return (
-    <div>
+    <ul>
       <Comment />
       <Comment />
       <Comment />
-    </div>
+    </ul>
   );
 }
 

@@ -1,21 +1,3 @@
-form {
-  margin-top: 1em;
-  display: flex;
-  align-items: stretch;
-}
-
-.username {
-  flex-grow: 0;
-  margin-right: 0.5em;
-}
-
-.comment {
-  flex-grow: 10;
-}
-
-.field {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid rgb(182, 182, 182);
+li {
+  margin-top: 1.5em;
 }
