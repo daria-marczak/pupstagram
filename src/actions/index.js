@@ -9,19 +9,19 @@ export function fetchPhotos() {
   };
 }
 
+export function fetchComments() {
+  const response = axios.get("https://jsonplaceholder.typicode.com/posts/1/comments");
+  return {
+    type: FETCH_COMMENTS,
+    payload: response
+  };
+}
+
 export function addComment(id, name, body) {
   return {
     type: ADD_COMMENT,
     id,
     name,
     body
-  };
-}
-
-export function fetchComments() {
-  const response = axios.get("https://jsonplaceholder.typicode.com/posts/1/comments");
-  return {
-    type: FETCH_COMMENTS,
-    payload: response
   };
 }
