@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 Project filled with dogs to brush up some skills in Redux
 
 All photos come from external API, forms are redux-forms
@@ -22,9 +20,8 @@ Further development will incorporate
 
 Enjoy the doggos!
 ![Labrador](https://images.pexels.com/photos/8700/wall-animal-dog-pet.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
->>>>>>> comments
+
 =======
 Project filled with dogs to brush up some skills in Redux
 
 All photos come from external API, forms are redux-forms
->>>>>>> 49f05fd6fd2358d16e9f16249acf0b4ed1148fd1
