@@ -1,7 +1,3 @@
-Project filled with dogs to brush up some skills in Redux
-
-All photos come from external API, forms are redux-forms
-=======
 # Pupstagram
 
 Pupstagram is an Instagram copy developed for the purpose of deepening knowledge of Redux.
