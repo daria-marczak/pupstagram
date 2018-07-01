@@ -1,20 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import Comment from "./Comment";
+import { fetchComments } from "../actions/index";
+import CommentBox from "./CommentBox";
 import "../styles/CommentList.css";
 
 class CommentList extends Component {
+  componentDidMount() {
+    this.props.fetchComments();
+    console.log(this.props);
+  }
   renderComments() {
-    console.log(this.props.comments);
+
     const [comment] = this.props.comments;
-    console.log(comment);
+    if (!comment) {
+      return [];
+    }
+    return (
+      <CommentBox comment={comment} />
+    )
   }
 
   render() {
     return (
       <ul>
-        <Comment />
+        <CommentBox />
         { this.renderComments() }
       </ul>
     );
@@ -25,4 +36,8 @@ function mapStateToProps({ comments }) {
   return { comments }
 }
 
-export default connect(mapStateToProps)(CommentList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators( { fetchComments }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentList);

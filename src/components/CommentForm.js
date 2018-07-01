@@ -7,9 +7,9 @@ import {addComment} from "../actions/index";
 class CommentForm extends Component {
   
   submit = (values, dispatch) => {
-    const { username: author, comment: content } = values;
+    const { username: name, comment: body } = values;
     const { path: id } = this.props;
-    dispatch(addComment(id, author, content));
+    dispatch(addComment(id, name, body));
   }
   
   render() {

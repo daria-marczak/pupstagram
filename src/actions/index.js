@@ -1,4 +1,4 @@
-import { FETCH_PHOTOS, ADD_COMMENT } from "./types";
+import { FETCH_PHOTOS, ADD_COMMENT, FETCH_COMMENTS } from "./types";
 import axios from "axios";
 
 export function fetchPhotos() {
@@ -9,12 +9,19 @@ export function fetchPhotos() {
   };
 }
 
-export function addComment(id, author, content) {
-  console.log("Dispatching add comment");
+export function addComment(id, name, body) {
   return {
     type: ADD_COMMENT,
     id,
-    author,
-    content
-  }
+    name,
+    body
+  };
+}
+
+export function fetchComments() {
+  const response = axios.get("https://jsonplaceholder.typicode.com/posts/1/comments");
+  return {
+    type: FETCH_COMMENTS,
+    payload: response
+  };
 }

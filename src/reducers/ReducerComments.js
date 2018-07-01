@@ -1,15 +1,20 @@
-import { ADD_COMMENT } from "../actions/types";
+import { ADD_COMMENT, FETCH_COMMENTS } from "../actions/types";
 
-function addComment(state = [], action) {
+function comments(state = [], action) {
   switch(action.type) {
     case ADD_COMMENT:
       return [...state, {
-        user: action.author,
-        text: action.content
+        name: action.name,
+        body: action.body
       }];
+    case FETCH_COMMENTS:
+    console.log(action.payload);
+      return [...state, action.payload.data];
+      
     default:
       return state;
   }
+  
 }
 
-export default addComment;
+export default comments;
