@@ -6,6 +6,10 @@ class CommentForm extends Component {
   
   submit = (values) => {
     console.log("submitting values", values);
+    const { username: author, comment: content } = values;
+    const { path: id } = this.props;
+    console.log(author, content, id);
+    
   }
   
   render() {

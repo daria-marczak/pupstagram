@@ -6,8 +6,6 @@ const CommentList = () => {
   return (
     <ul>
       <Comment />
-      <Comment />
-      <Comment />
     </ul>
   );
 }

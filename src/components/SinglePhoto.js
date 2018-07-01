@@ -15,7 +15,7 @@ const SinglePhoto = (photo) => {
         <figure>
           <figcaption>One of Shakespeare’s most mischievous characters is Crab, the dog belonging to Launce in the Two Gentlemen of Verona. The word \"watchdog\" is first found in The Tempest.</figcaption>
           <CommentList />
-          <CommentForm />
+          <CommentForm path={pathName} />
         </figure>
       </div>
     </div>
