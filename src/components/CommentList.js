@@ -1,15 +1,43 @@
-import React from "react";
-import Comment from "./Comment";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { fetchComments } from "../actions/index";
+import SingleComment from "./SingleComment";
 import "../styles/CommentList.css";
 
-const CommentList = () => {
-  return (
-    <ul>
-      <Comment />
-      <Comment />
-      <Comment />
-    </ul>
-  );
+class CommentList extends Component {
+  componentDidMount() {
+    this.props.fetchComments();
+  }
+
+  renderComments() {
+    const [comments] = this.props.comments;
+    if (!comments) {
+      return [];
+    };
+    return (
+      <SingleComment comment={comments}/>
+    )
+  }
+
+  render() {
+    return (
+      <ul>
+        { this.renderComments() }
+      </ul>
+    );
+  }
 }
 
-export default CommentList;
+function mapStateToProps({ comments }) {
+  return { comments }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators( { fetchComments }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentList);
+
+// export default connect(mapStateToProps)(CommentList)

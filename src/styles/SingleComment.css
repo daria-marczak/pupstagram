@@ -1,0 +1,15 @@
+li {
+  margin-top: 1.5em;
+}
+
+p {
+  display: flex;
+}
+
+strong {
+  flex: 1;
+}
+
+span {
+  flex: 5;
+}
