@@ -1,5 +1,15 @@
-function comments(state = [], action) {
-  return state;
+import { ADD_COMMENT } from "../actions/types";
+
+function addComment(state = [], action) {
+  switch(action.type) {
+    case ADD_COMMENT:
+      return [...state, {
+        user: action.author,
+        text: action.content
+      }];
+    default:
+      return state;
+  }
 }
 
-export default comments;
+export default addComment;
