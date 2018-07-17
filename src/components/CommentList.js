@@ -39,5 +39,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentList);
-
-// export default connect(mapStateToProps)(CommentList)

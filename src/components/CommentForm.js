@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import "../styles/CommentForm.css";
 import { connect } from "react-redux";
-import {addComment} from "../actions/index";
+import { addComment } from "../actions/index";
 
 class CommentForm extends Component {
   
   submit = (values, dispatch) => {
     const { username: name, comment: body } = values;
     const { path: id } = this.props;
-    dispatch(addComment(id, name, body));
+    addComment(id, name, body);
+    console.log(values);
   }
   
   render() {

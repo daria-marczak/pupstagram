@@ -20,8 +20,6 @@ export function fetchComments() {
 export function addComment(id, name, body) {
   return {
     type: ADD_COMMENT,
-    id,
-    name,
-    body
+    payload: id, name, body
   };
 }
