@@ -10,7 +10,6 @@ class CommentForm extends Component {
     const { username: name, comment: body } = values;
     const { path: id } = this.props;
     dispatch(addComment(id, name, body));
-    console.log(id, name, body);
   }
   
   render() {
@@ -25,7 +24,11 @@ class CommentForm extends Component {
 }
 
 const MyCommentForm = reduxForm ({
-  form: "CommentForm"
+  form: "CommentForm",
+  // onSubmitSuccess: (props) => {
+  //   console.log(props);
+  //   props.reset("CommentForm");
+  // }
 })(CommentForm);
 
-export default connect(dispatch => ({ onSubmit: data => dispatch(addComment(data))}))(MyCommentForm);
+export default connect(dispatch => ({ onSubmit: comment => dispatch(addComment(comment))}))(MyCommentForm);
