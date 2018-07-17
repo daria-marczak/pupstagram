@@ -8,7 +8,6 @@ function comments(state = [], action) {
         action.payload
       ];
     case FETCH_COMMENTS:
-    console.log("FEtching");
       return [...state, action.payload.data];
     default:
       return state;

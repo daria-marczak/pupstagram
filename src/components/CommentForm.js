@@ -9,8 +9,8 @@ class CommentForm extends Component {
   submit = (values, dispatch) => {
     const { username: name, comment: body } = values;
     const { path: id } = this.props;
-    addComment(id, name, body);
-    console.log(values);
+    dispatch(addComment(id, name, body));
+    console.log(id, name, body);
   }
   
   render() {
