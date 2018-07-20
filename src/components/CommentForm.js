@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import "../styles/CommentForm.css";
 import { connect } from "react-redux";
-import {addComment} from "../actions/index";
+import { addComment } from "../actions/index";
 
 class CommentForm extends Component {
   
@@ -24,7 +24,11 @@ class CommentForm extends Component {
 }
 
 const MyCommentForm = reduxForm ({
-  form: "CommentForm"
+  form: "CommentForm",
+  // onSubmitSuccess: (props) => {
+  //   console.log(props);
+  //   props.reset("CommentForm");
+  // }
 })(CommentForm);
 
-export default connect(dispatch => ({ onSubmit: data => dispatch(addComment(data))}))(MyCommentForm);
+export default connect(dispatch => ({ onSubmit: comment => dispatch(addComment(comment))}))(MyCommentForm);
