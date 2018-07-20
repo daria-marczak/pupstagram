@@ -10,3 +10,13 @@ it("handles action of type ADD_COMMENT", () => {
   const newState = ReducerComments([], action);
   expect(newState).toEqual(["Test"]);
 });
+
+// it("handles the action of type FETCH_COMMENTS", () => {
+//   const action = {
+//     type: FETCH_COMMENTS,
+//     payload: "Fetched comments"
+//   };
+
+//   const newState = ReducerComments([], action);
+//   expect(newState).toEqual(["Fetched comments"]);
+// });
