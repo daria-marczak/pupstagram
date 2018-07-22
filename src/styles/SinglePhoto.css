@@ -36,4 +36,51 @@ figure {
   color: #2E9398;
   outline: none;
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding-right: 1em;
+  transition: all 0.4s ease-in-out;
+}
+
+
+.thumbsUp:before {
+  content: '';
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scale(0.001, 0.001);
+          transform: scale(0.001, 0.001);
+}
+
+.thumbsUp:focus {
+  outline: 0,5;
+  color: #2E9398;
+}
+
+.thumbsUp:focus:before {
+    animation: effect 0.8s ease-out;
+    animation-duration: 0.5s;
+}
+
+@keyframes effect {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  98% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

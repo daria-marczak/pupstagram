@@ -10,8 +10,8 @@ The app is currently using:
 + Axios for fetching the data
 
 Further development will incorporate
-- [ ] Testing
-- [ ] Possibility to add comments
+- [x] Testing (in progress)
+- [x] Possibility to add comments
 - [ ] Incrementing likes for each post
 
 Enjoy the doggos!

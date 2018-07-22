@@ -5,8 +5,8 @@ import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 const SinglePhoto = (photo) => {
   const { location: { pathname: path } } = photo;
@@ -23,8 +23,9 @@ const SinglePhoto = (photo) => {
           <figcaption>One of Shakespeare’s most mischievous characters is Crab, the dog belonging to Launce in the Two Gentlemen of Verona. The word \"watchdog\" is first found in The Tempest.</figcaption>
           <div className="likes">
             <button className="thumbsUp">
-            <FontAwesomeIcon icon={faThumbsUp} />
-            </button> {likes}
+              <FontAwesomeIcon icon={faThumbsUp} />
+            </button> 
+            {likes}
           </div>
           <CommentList />
           <CommentForm path={pathName} />

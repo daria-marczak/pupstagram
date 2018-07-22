@@ -1,4 +1,4 @@
-import { FETCH_PHOTOS, ADD_COMMENT, FETCH_COMMENTS } from "./types";
+import { FETCH_PHOTOS, ADD_COMMENT, FETCH_COMMENTS, INCREMENT_LIKES } from "./types";
 import axios from "axios";
 
 export function fetchPhotos() {
@@ -22,4 +22,11 @@ export function addComment(id, name, body) {
     type: ADD_COMMENT,
     payload: { id, name, body }
   };
+}
+
+export function incrementLikes(index) {
+  return {
+    type: INCREMENT_LIKES,
+    index
+  }
 }
