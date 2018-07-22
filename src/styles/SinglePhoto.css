@@ -22,3 +22,18 @@ figure {
   flex: 1;
   margin-left: 2em;
 }
+
+.likes {
+  padding-top: 0.9em;
+  font-weight: 700;
+  color: #2E9398;
+}
+
+.thumbsUp {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #2E9398;
+  outline: none;
+  cursor: pointer;
+}
