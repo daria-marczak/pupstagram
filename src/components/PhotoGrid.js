@@ -34,7 +34,7 @@ class PhotoGrid extends Component {
 }
 
 function mapStateToProps({photos}) {
-  return {photos};
+  return { photos };
 }
 
 function mapDispatchToProps(dispatch) {

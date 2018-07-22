@@ -24,9 +24,9 @@ export function addComment(id, name, body) {
   };
 }
 
-export function incrementLikes(index) {
+export function incrementLikes(id) {
   return {
     type: INCREMENT_LIKES,
-    index
+    id
   }
 }
