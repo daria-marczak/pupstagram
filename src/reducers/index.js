@@ -6,7 +6,8 @@ import ReducerComments from "./ReducerComments";
 const rootReducer =  combineReducers ({
   photos: ReducerPhotos,
   form: formReducer,
-  comments: ReducerComments
+  comments: ReducerComments,
+  likes: ReducerPhotos
 });
 
 export default rootReducer;

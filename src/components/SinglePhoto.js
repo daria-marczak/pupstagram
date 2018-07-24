@@ -4,6 +4,7 @@ import "../styles/SinglePhoto.css";
 import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 import { incrementLikes } from "../actions/index";
+import { fetchPhotos } from "../actions/index";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -12,14 +13,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 class SinglePhoto extends Component {
+  componentDidMount() {
+    this.props.fetchPhotos();
+  }
   render() {
-    const { location: { pathname: path } } = this.props;
+    const { location: { pathname: path }, likes: votes } = this.props;
     const pathName = path.substring(1);
 
-    console.log(this.props);
-    const likes = Math.floor(Math.random() * Math.floor(150));
-
-    const index = Math.floor(Math.random() * Math.floor(10));
+    const likes = votes[1];    
 
     return (
       <div className="SinglePhoto">
@@ -48,7 +49,7 @@ function mapStateToProps({likes}) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators( { incrementLikes }, dispatch);
+  return bindActionCreators( { fetchPhotos, incrementLikes }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SinglePhoto);
