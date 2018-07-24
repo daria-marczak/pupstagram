@@ -27,9 +27,9 @@ export function addComment(id, name, body) {
   };
 }
 
-export function incrementLikes(id) {
+export function incrementLikes() {
+  console.log("incrementing!!!!");
   return {
-    type: INCREMENT_LIKES,
-    id
+    type: INCREMENT_LIKES
   }
 }

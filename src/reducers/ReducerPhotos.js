@@ -7,7 +7,7 @@ export default function(state = [], action) {
       return [action.payload.data.message, action.meta.likes];
     case INCREMENT_LIKES:
       return [
-        action.likes +1
+        action.likes + 1
       ]; 
     default:
       return state;

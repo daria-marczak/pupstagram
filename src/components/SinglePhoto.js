@@ -30,7 +30,7 @@ class SinglePhoto extends Component {
           <figure>
             <figcaption>One of Shakespeare’s most mischievous characters is Crab, the dog belonging to Launce in the Two Gentlemen of Verona. The word \"watchdog\" is first found in The Tempest.</figcaption>
             <div className="likes">
-              <button className="thumbsUp">
+              <button className="thumbsUp" onClick={this.props.incrementLikes}>
                 <FontAwesomeIcon icon={faThumbsUp} />
               </button> 
               {likes}
