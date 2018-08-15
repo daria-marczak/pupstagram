@@ -18,14 +18,12 @@ const store = createStore(
   compose(applyMiddleware(routerMiddleware(history), ReduxPromise))
 );
 
-console.log(store)
-
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path={`/:id`} component={SinglePhoto} />
+        <Route path={`/:id`} component={SinglePhoto}/>
       </Switch>
     </ConnectedRouter>
   </Provider>,
