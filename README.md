@@ -4,7 +4,7 @@ Pupstagram is an Instagram copy developed for the purpose of deepening knowledge
 
 ---
 The app is currently using:
-+ [Dog API](https://dog.ceo/dog-api/)
++ Flickr API
 + React Router for switching the routes
 + Redux Form
 + Axios for fetching the data

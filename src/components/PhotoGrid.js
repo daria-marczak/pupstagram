@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import "../styles/PhotoGrid.css";
 import { fetchPhotos } from "../actions/index";
@@ -17,11 +16,13 @@ class PhotoGrid extends Component {
     if (!photosArray) {
       return <p>Loading...</p>;
     }
-    return photosArray.map((photo, index) => (
-      <Link key={index} to={`/${photo}`} photo={photo}>
-        <Photo key={index} photo={photo}/>
-      </Link>
-    ));
+
+    return photosArray.map(photo => {
+      const { id } = photo;
+      return (
+        <Photo key={id} photo={photo}/>
+      )
+    });
   }
 
   render() {

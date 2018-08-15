@@ -23,7 +23,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path={`/:index`} component={SinglePhoto} />
+        <Route path={`/:id`} component={SinglePhoto}/>
       </Switch>
     </ConnectedRouter>
   </Provider>,
