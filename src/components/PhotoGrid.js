@@ -13,19 +13,18 @@ class PhotoGrid extends Component {
   }
 
   renderPhotos() {
-    console.log(this.props.photos);
     const [photosArray] = this.props.photos;
     if (!photosArray) {
       return <p>Loading...</p>;
     }
 
-    return photosArray.map((photo, index) => {
-      const { farm, server, id, secret } = photo;
+    return photosArray.map(photo => {
+      const { id } = photo;
       return (
-        <Link key={id} to={`/${photo}`}>
-          <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}/>
+        <Link key={id} to={`/${id}`} props={photo}>
+          <Photo photo={photo}/>
         </Link>
-    )
+      )
     });
   }
 
