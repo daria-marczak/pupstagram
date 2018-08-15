@@ -34,8 +34,11 @@ class SinglePhoto extends Component {
         <div className="post">
           <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title} />
           <figure>
-            <figcaption>One of Shakespeare’s most mischievous characters is Crab, the dog belonging to Launce in the Two Gentlemen of Verona. The word \"watchdog\" is first found in The Tempest.</figcaption>
-            <CommentList />
+            <figcaption>
+              <h3>{title}</h3>
+              <p>{content}</p>
+            </figcaption>
+            {/* <CommentList /> */}
             {/* <CommentForm path={pathName} /> */}
           </figure>
         </div>
